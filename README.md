@@ -1,4 +1,4 @@
 # CodeIgniter-form_validation
-Codeigniter project setup for basic Form Validation
+CodeIgniter project setup for basic Form Validation
 
-This is a complete Codeigniter (version-3.1.10) project setup for basic Form Validation using Codeigniter's Form Validation library.
+This is a complete CodeIgniter (version-3.1.10) project setup for basic Form Validation using CodeIgniter's Form Validation library.
