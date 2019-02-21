@@ -1,13 +1,13 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>CodeIgniter Form-Validation</title>
-
-	<style type="text/css">
+    <title>CodeIgniter Form-Validation</title>
+    <!--meta info-->
+    <meta charset="utf-8">
+    <meta name="author" content="Viren Panchal">
+    <!--Mobile Specific Metas-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style type="text/css">
 	body {
 		background-color: #fff;
 		margin: 40px;
@@ -52,9 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-    <h1><a href="<?php echo site_url(); ?>" title="CodeIgniter Form-Validation">CodeIgniter Form-Validation</a></h1>
+	<h1><a href="<?php echo site_url(); ?>" title="CodeIgniter Form-Validation">CodeIgniter Form-Validation</a></h1>
     
-    <?php echo form_open('form_controller'); ?>
+	<?php echo form_open('form_controller'); ?>
     <fieldset>
     <legend>User Registration Form</legend>
     
@@ -105,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo form_error('confirm_password');?>
     </div>
 
-    <div class="field">
+	<div class="field">
     <label for="country">Country</label><br/>
     <select name="country" id="country">
     	<option value="">--Select--</option>
