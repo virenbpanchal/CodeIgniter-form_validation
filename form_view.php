@@ -52,9 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1><a href="<?php echo site_url(); ?>" title="CodeIgniter Form-Validation">CodeIgniter Form-Validation</a></h1>
+    <h1><a href="<?php echo site_url(); ?>" title="CodeIgniter Form-Validation">CodeIgniter Form-Validation</a></h1>
     
-	<?php echo form_open('form_controller'); ?>
+    <?php echo form_open('form_controller'); ?>
     <fieldset>
     <legend>User Registration Form</legend>
     
@@ -105,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo form_error('confirm_password');?>
     </div>
 
-	<div class="field">
+    <div class="field">
     <label for="country">Country</label><br/>
     <select name="country" id="country">
     	<option value="">--Select--</option>
