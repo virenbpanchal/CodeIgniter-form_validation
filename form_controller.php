@@ -32,28 +32,40 @@ class Form_controller extends CI_Controller {
 	
 	public function index()
 	{
-		// Set validation rules
-		$this->form_validation->set_rules('firstname', 'First Name', 'required|alpha');
-		$this->form_validation->set_rules('lastname', 'Last Name', 'required|alpha');
-		$this->form_validation->set_rules('gender', 'Gender', 'required');
-		$this->form_validation->set_rules('mobileno', 'Mobile No', 'required|numeric|min_length[10]');
-		$this->form_validation->set_rules('emailid', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
-		$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|min_length[6]|matches[password]');
-		$this->form_validation->set_rules('degree[]', 'Degree', 'required');
-		$this->form_validation->set_rules('hobby[]', 'Hobby', 'required');
-		
-		// Set error delimiters in DIV
-		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
-		
-		// check for validation
-		if ($this->form_validation->run() == FALSE)
+		if( isset($_POST) && is_array($_POST) && count($_POST)>0 )
 		{
-			$this->load->view('form_view');
+			//echo "<pre>";
+			//print_r($_POST);
+			//die();
+			
+			// Set validation rules
+			$this->form_validation->set_rules('firstname', 'First Name', 'required|alpha');
+			$this->form_validation->set_rules('lastname', 'Last Name', 'required|alpha');
+			$this->form_validation->set_rules('gender', 'Gender', 'required');
+			$this->form_validation->set_rules('mobileno', 'Mobile No', 'required|numeric|min_length[10]');
+			$this->form_validation->set_rules('emailid', 'Email', 'required|valid_email');
+			$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
+			$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|min_length[6]|matches[password]');
+			$this->form_validation->set_rules('country', 'Country', 'required');
+			$this->form_validation->set_rules('degree[]', 'Degree', 'required');
+			$this->form_validation->set_rules('hobby[]', 'Hobby', 'required');
+			
+			// Set error delimiters in DIV
+			$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+		
+			// check for validation
+			if ($this->form_validation->run() == FALSE)
+			{
+				$this->load->view('form_view');
+			}
+			else
+			{
+				$this->load->view('form_success_view');
+			}
 		}
 		else
 		{
-			$this->load->view('form_success_view');
+			$this->load->view('form_view');
 		}
 	}
 }
