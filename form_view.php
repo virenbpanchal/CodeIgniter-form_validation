@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>CodeIgniter Form-Validation</h1>
+	<h1><a href="<?php echo site_url(); ?>" title="CodeIgniter Form-Validation">CodeIgniter Form-Validation</a></h1>
     
 	<?php echo form_open('form_controller'); ?>
     <fieldset>
@@ -105,9 +105,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo form_error('confirm_password');?>
     </div>
 
+	<div class="field">
+    <label for="country">Country</label><br/>
+    <select name="country" id="country">
+    	<option value="">--Select--</option>
+        <option value="USA" <?php echo set_select('country', 'USA');?>>USA</option>
+        <option value="India" <?php echo set_select('country', 'India');?>>India</option>
+        <option value="Canada" <?php echo set_select('country', 'Canada');?>>Canada</option>
+    </select>
+    <?php echo form_error('country');?>
+    </div>
+
     <div class="field">
     <label for="degree">Degree</label><br/>
-    <select multiple="multiple" name="degree[]" id="degree[]">
+    <select multiple="multiple" name="degree[]" id="degree">
         <option value="BE" <?php echo set_select('degree[]', 'BE');?>>BE</option>
         <option value="ME" <?php echo set_select('degree[]', 'ME');?>>ME</option>
         <option value="BCA" <?php echo set_select('degree[]', 'BCA');?>>BCA</option>
